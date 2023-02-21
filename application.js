@@ -27,13 +27,13 @@ $(document).ready(function(){
             if (!task.completed) {
               activeTasks++;
             }
-  
-          $('.to-do-amount').append('<div class="todo-list ' + (task.completed ? 'complete' : '') + '"><input type="checkbox" class="mark-complete" data-id="' + task.id + '"' + (task.completed ? 'checked' : '') + '>' + " " + task.content + " " + '<button class="delete btn-danger btn-sm" data-id="' + task.id + '"></button></div>' + '<br>');
+            
+            $('.to-do-amount').append('<div class="todo-list ' + (task.completed ? 'complete' : '') + '"><input type="checkbox" class="mark-complete" data-id="' + task.id + '"' + (task.completed ? 'checked' : '') + '>' + " " + task.content + " " + '<button class="delete btn-danger btn-sm" data-id="' + task.id + '"></button></div>' + '<br>');
           });
-          $('.to-do-amount').text(activeTasks.length);
-          console.log(activeTasks)
+            $('.to-do-amount').append('Number of Active Tasks' + " = " + activeTasks);
+          console.log(activeTasks);
         },
-       
+
         error: function (request, textStatus, errorMessage) {
           console.log(errorMessage);
         }
